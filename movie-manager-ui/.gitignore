@@ -1,0 +1,5 @@
+node_modules
+build_dev
+build_prod
+vendor
+target

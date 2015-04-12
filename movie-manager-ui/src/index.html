@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]>
+<html lang="en">
+<!--<![endif]-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title translate="APP_NAME"></title>
+
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="styles/vendor.css">
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js config.js -->
+    <script src="config.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js js/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- angular:src:js -->
+    <!-- endbuild -->
+
+</head>
+
+<body ng-app="movie-manager">
+
+<div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span class="navbar-brand" href="#">
+                <span class="glyphicon glyphicon-film" ng-click="$state.go('home')"></span>
+            </span>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: $state.includes('movies')}"><a ui-sref="movies.search">Search</a></li>
+                <li ng-class="{active: $state.includes('users')}"><a ui-sref="users.registration">Users</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div ui-view></div>
+</div>
+</body>
+</html>
+
+

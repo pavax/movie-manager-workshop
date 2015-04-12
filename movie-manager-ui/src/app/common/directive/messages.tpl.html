@@ -1,0 +1,7 @@
+<div class="form-error-messages">
+    <div ng-messages="ctrl.form[ctrl.fieldName].$error"
+         ng-messages-multiple
+         ng-show="ctrl.form.$submitted || ctrl.form[ctrl.fieldName].$touched || ctrl.form[ctrl.fieldName].$dirty"
+         ng-transclude>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+{
+  "name": "angular-seed",
+  "title": "angular-seed",
+  "description": "angular-seed",
+  "version": "1.0.0",
+  "organization": {
+    "name": "mimacom",
+    "url": "http://www.mimacom.com/"
+  },
+  "homepage": "https://not.yet.ch/",
+  "repository": {
+    "type": "git",
+    "url": "https://git.mimacom.com/scm/mimacom/angular-seed.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-angular-architecture-graph": "^0.2.5",
+    "grunt-autoprefixer": "^1.0.1",
+    "grunt-bump": "0.0.6",
+    "grunt-cli": "^0.1.13",
+    "grunt-connect-proxy": "^0.1.11",
+    "grunt-contrib-clean": "^0.4.1",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-imagemin": "~0.8.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-uglify": "^0.2.7",
+    "grunt-contrib-watch": "^0.4.4",
+    "grunt-conventional-changelog": "^0.1.2",
+    "grunt-filerev": "^0.2.1",
+    "grunt-graphviz": "^0.1.0",
+    "grunt-html2js": "^0.1.9",
+    "grunt-include-source": "^0.4.1",
+    "grunt-jsbeautifier": "^0.2.7",
+    "grunt-karma": "^0.8.3",
+    "grunt-neuter": "^0.6.0",
+    "grunt-ng-annotate": "^0.9.2",
+    "grunt-replace": "^0.8.0",
+    "grunt-usemin": "3.0.0",
+    "grunt-wiredep": "2.0.0",
+    "karma": "^0.12.9",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-growl-reporter": "^0.1.1",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-spec-reporter": "0.0.13",
+    "karma-story-reporter": "^0.2.2",
+    "load-grunt-config": "^0.13.0",
+    "load-grunt-configs": "~0.4.0",
+    "load-grunt-tasks": "~0.6.0",
+    "lodash": "^3.1.0",
+    "phantomjs": "^1.9.7-15",
+    "wiredep": "^2.2.2",
+    "grunt-babel": "~4.0.0"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
