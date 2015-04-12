@@ -15,14 +15,7 @@
 
             function searchMovie() {
                 self.loading = true;
-                MovieSearchResource.search(self.query)
-                    .then(function (movies) {
-                        self.movies = movies;
-                    }, function (error) {
-                        self.error = error;
-                    }).finally(function () {
-                        self.loading = false;
-                    });
+                // Use the MovieSearchResource in order search for movies with the given query
             }
         });
 }());

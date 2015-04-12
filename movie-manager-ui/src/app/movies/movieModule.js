@@ -23,23 +23,8 @@
                 controller: 'MovieSearchController',
                 controllerAs: 'searchCtrl'
             })
-            .state('movies.detail', {
-                url: '/details?movieId',
-                templateUrl: 'movies/details/movie.detail.tpl.html',
-                controller: 'MovieDetailController',
-                controllerAs: 'detailCtrl',
-                resolve: {
-                    movie: function (MovieSearchResource, $stateParams) {
-                        return MovieSearchResource.movieInfo($stateParams.movieId);
-                    },
-                    movieComments: function (MovieCommentResource, $stateParams) {
-                        return MovieCommentResource.findCommentsForMovie($stateParams.movieId)
-                            .then(function(successResponse){
-                                return successResponse.data.content;
-                            });
-                    }
-                }
-            });
+            // TODO Define the details state for movies
+        ;
     }
 
 }());

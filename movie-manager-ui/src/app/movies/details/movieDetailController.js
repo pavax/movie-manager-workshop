@@ -1,10 +1,12 @@
 (function () {
     angular.module('movie-manager.movies')
-        .controller('MovieDetailController', function (MovieSearchResource, movie, movieComments) {
+        .controller('MovieDetailController', function (MovieSearchResource) {
             var self = this;
 
-            this.movie = movie;
+            // TODO Receive the movie
+            //this.movie = movie;
 
-            this.comments = movieComments;
+            // TODO Receive the comments
+            //this.comments = movieComments;
         });
 }());
