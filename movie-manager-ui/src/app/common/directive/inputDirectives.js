@@ -34,7 +34,7 @@
                 link: function (scope, elm, attrs, ngModelController) {
                     ngModelController.$validators.greater = function (modelValue, viewValue) {
                         var value = modelValue || viewValue;
-                        return ngModelController.$isEmpty(value) || parseFloat(viewValue) > attrs.greater;
+                        return ngModelController.$isEmpty(value) || parseFloat(value) > attrs.greater;
                     };
                 }
             };
