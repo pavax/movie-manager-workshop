@@ -10,7 +10,8 @@
 
         <div class="form-group" validation="myName">
             <label class="col-md-4 control-label" for="myName">Name</label>
-            <div class="col-md-4" >
+
+            <div class="col-md-4">
                 <input id="myName"
                        name="myName"
                        type="text"
@@ -20,6 +21,7 @@
                        required
                        ng-maxlength="10"
                        ng-minlength="2">
+
                 <div messages="myName" show-multiple-messages="true">
                     <span ng-message="required">You did not enter a field</span>
                     <span ng-message="minlength">Your field is too short</span>
@@ -31,7 +33,8 @@
 
         <div class="form-group" validation="age">
             <label class="col-md-4 control-label" for="age">Age</label>
-            <div class="col-md-4" >
+
+            <div class="col-md-4">
                 <input id="age"
                        name="age"
                        type="text"
@@ -39,11 +42,11 @@
                        class="form-control input-md"
                        ng-model="regCtrl.model.age"
                        required
-                       integer
                        greater="10"
-                       number-format="0"
-                       >
-                <div messages="age" show-multiple-messages="true">
+                       number-format
+                       integer-validator>
+
+                <div messages="age" show-multiple-messages="false">
                     <span ng-message="required">You did not enter a field</span>
                     <span ng-message="integer">Please provide an integer</span>
                     <span ng-message="greater">You must be older than 10</span>
@@ -55,7 +58,7 @@
 
             <div class="col-md-4">
                 <button id="singlebutton" type="submit" name="singlebutton" class="btn btn-primary">Button</button>
-                <button type="button" class="btn btn-default" ng-click="regCtrl.form.$reset(); regCtrl.reset()">Reset
+                <button type="button" class="btn btn-default" ng-click="regCtrl.reset();regCtrl.form.$reset();">Reset
                 </button>
             </div>
         </div>
