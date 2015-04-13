@@ -19,9 +19,7 @@
             })
             .state('movies.search', {
                 url: '',
-                templateUrl: 'movies/search/movies.search.tpl.html',
-                controller: 'MovieSearchController',
-                controllerAs: 'searchCtrl'
+                template: '<div movie-search-component></div>'
             })
             .state('movies.detail', {
                 url: '/details?movieId',
@@ -29,17 +27,10 @@
                 controller: 'MovieDetailController',
                 controllerAs: 'detailCtrl',
                 resolve: {
-                    movie: function (MovieSearchResource, $stateParams) {
-                        return MovieSearchResource.movieInfo($stateParams.movieId);
-                    },
-                    movieComments: function (MovieCommentResource, $stateParams) {
-                        return MovieCommentResource.findCommentsForMovie($stateParams.movieId)
-                            .then(function(successResponse){
-                                return successResponse.data.content;
-                            });
+                    init: function (MovieModel, $stateParams) {
+                        return MovieModel.initMovie($stateParams.movieId);
                     }
                 }
             });
     }
-
 }());

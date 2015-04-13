@@ -1,10 +1,16 @@
 (function () {
     angular.module('movie-manager.movies')
-        .controller('MovieDetailController', function (MovieSearchResource, movie, movieComments) {
+        .controller('MovieDetailController', function (MovieSearchResource, MovieModel) {
             var self = this;
 
-            this.movie = movie;
+            this.MovieModel = MovieModel;
 
-            this.comments = movieComments;
+            this.movie = MovieModel.currentMovie;
+
+
+            this.add = function(selectedMovie){
+                self.MovieModel.saveMovieToMyList(selectedMovie);
+            };
+
         });
 }());

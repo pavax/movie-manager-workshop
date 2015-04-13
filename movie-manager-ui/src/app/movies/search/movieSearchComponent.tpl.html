@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12" ng-if="searchCtrl.movies">
+        <div class="col-sm-12" ng-if="searchCtrl.MovieModel.searchResults">
             <table class="table">
                 <thead>
                 <tr>
@@ -34,7 +34,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="movie in searchCtrl.movies">
+                <tr ng-repeat="movie in searchCtrl.MovieModel.searchResults">
                     <td><a ng-href="#/movies/details?movieId={{movie.imdbID}}">{{movie.Title}}</a></td>
                     <td>{{movie.Year}}</td>
                     <td>{{movie.Type}}</td>
