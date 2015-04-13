@@ -4,27 +4,16 @@
 
     angular
         .module('movie-manager.common')
-        .directive('integer', function () {
-            var INTEGER_REGEXP = /^[\-|\+]?\d+$/;
+        .directive('integerValidator', function () {
             return {
                 require: 'ngModel',
                 link: function (scope, elm, attrs, ngModelController) {
-                    //For DOM -> model validation
-                    ngModelController.$parsers.unshift(function (viewValue) {
-                        if (ngModelController.$isEmpty(viewValue)) {
-                            ngModelController.$setValidity('integer', true);
-                            return viewValue;
-                        }
-                        // remove ' and , from input (eg 1'000 -> 1000)
-                        var numberToValidate = viewValue.toString().replace(/[',]/g, '');
-                        if (INTEGER_REGEXP.test(numberToValidate)) {
-                            ngModelController.$setValidity('integer', true);
-                            return parseInt(numberToValidate.replace('+', ''), 10);
-                        } else {
-                            ngModelController.$setValidity('integer', false);
-                            return undefined;
-                        }
-                    });
+                    var INTEGER_REGEXP = /^[\-|\+]?\d+$/;
+
+                    ngModelController.$validators.integer = function (modelValue, viewValue) {
+                        var value = modelValue;
+                        return ngModelController.$isEmpty(value) || INTEGER_REGEXP.test(value);
+                    };
                 }
             };
         })
@@ -33,7 +22,7 @@
                 require: 'ngModel',
                 link: function (scope, elm, attrs, ngModelController) {
                     ngModelController.$validators.greater = function (modelValue, viewValue) {
-                        var value = modelValue || viewValue;
+                        var value = modelValue;
                         return ngModelController.$isEmpty(value) || parseFloat(value) > attrs.greater;
                     };
                 }

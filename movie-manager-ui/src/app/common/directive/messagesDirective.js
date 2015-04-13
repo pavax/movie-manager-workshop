@@ -13,7 +13,8 @@
             transclude: true,
             replace: true,
             scope: {
-                fieldName: '@messages'
+                fieldName: '@messages',
+                showMultipleMessages: '=showMultipleMessages'
             },
             controller: function ($element) {
                 this.form = $element.inheritedData('$formController');
