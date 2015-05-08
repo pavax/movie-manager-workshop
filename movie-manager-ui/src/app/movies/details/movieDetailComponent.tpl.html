@@ -6,15 +6,11 @@
 </h3>
 
 <button class="btn btn-default"
+        ng-if="detailCtrl.showWishListBtn"
         ng-click="detailCtrl.saveToMyList()">
     <span class="glyphicon glyphicon-star"></span>
     Save To My List
 </button>
-
-<h2>Test</h2>
-<div movie-wish-list-component></div>
-
-<br>
 
 <table class="table table-striped">
     <tr>

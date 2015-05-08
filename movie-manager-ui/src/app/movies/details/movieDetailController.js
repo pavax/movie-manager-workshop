@@ -1,12 +1,18 @@
 (function () {
     angular.module('movie-manager.movies')
-        .controller('MovieDetailController', function (MovieSearchResource) {
+        .controller('MovieDetailController', function (MovieModel) {
             var self = this;
 
-            // TODO Receive the movie
-            //this.movie = movie;
+            this.MovieModel = MovieModel;
 
-            // TODO Receive the comments
-            //this.comments = movieComments;
+            this.currentMovie = MovieModel.currentMovie;
+
+            this.saveToMyList = function () {
+                MovieModel.saveMovieToMyList(
+                    self.currentMovie.imdbID,
+                    self.currentMovie.Title,
+                    self.currentMovie.Year
+                );
+            };
         });
 }());

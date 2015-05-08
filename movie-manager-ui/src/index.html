@@ -39,19 +39,20 @@
 
 <body ng-app="movie-manager">
 
+
 <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <span class="navbar-brand" href="#">
                 <!--TODO Bind State to Navigation using $state.go()-->
-                <span class="glyphicon glyphicon-film"></span>
+                <span class="glyphicon glyphicon-film" ng-click="$state.go('home')"></span>
             </span>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <!--TODO Highlight current active state-->
                 <!--TODO Bind State to Navigation using an directive from angular-ui router-->
-                <li><a>Search</a></li>
+                <li ng-class="{active: $state.includes('movies')}"><a ui-sref="movies.search">Movies</a></li>
                 <li><a>Users</a></li>
             </ul>
         </div>
@@ -59,6 +60,7 @@
 </div>
 
 <div class="container">
+    <div growl></div>
     <div ui-view></div>
 </div>
 </body>

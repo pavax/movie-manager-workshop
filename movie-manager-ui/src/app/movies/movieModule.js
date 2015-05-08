@@ -15,15 +15,30 @@
             .state('movies', {
                 url: '/movies',
                 abstract: true,
-                templateUrl: 'movies/movies.tpl.html'
+                template: '<div ui-view></div>'
             })
             .state('movies.search', {
-                url: '',
+                url: '?query',
                 templateUrl: 'movies/search/movies.search.tpl.html',
                 controller: 'MovieSearchController',
-                controllerAs: 'searchCtrl'
+                controllerAs: 'searchCtrl',
+                resolve: {
+                    movies: function (MovieSearchResource, $stateParams) {
+                        if ($stateParams.query) {
+                            return MovieSearchResource.search($stateParams.query);
+                        }
+                    }
+                }
             })
-            // TODO Define the details state for movies
+            .state('movies.details', {
+                url: '/details?movieIdX',
+                template: '<div movie-detail-component show-wish-list-btn="true"></div>',
+                resolve: {
+                    init: function (MovieModel, $stateParams) {
+                        return MovieModel.initMovieDetails($stateParams.movieIdX);
+                    }
+                }
+            })
         ;
     }
 

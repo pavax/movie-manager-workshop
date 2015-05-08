@@ -26,7 +26,20 @@
         </div>
 
         <div class="col-sm-12" ng-if="searchCtrl.movies">
-            TODO Show movies in a table
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Jahr</th>
+                    <th>Typ</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="movie in searchCtrl.movies">
+                    <td><a href="" ng-click="$state.go('movies.details', { movieIdX: movie.imdbID})">{{movie.Title}}</a></td>
+                    <td>{{movie.Year}}</td>
+                    <td>{{movie.Type}}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

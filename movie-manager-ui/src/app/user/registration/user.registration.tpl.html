@@ -1,36 +1,34 @@
 <h1>User Registration</h1>
 
 
-{{regCtrl.model | json}}
 
 <form name="regCtrl.form" class="form-horizontal" novalidate ng-submit="regCtrl.form.$valid && regCtrl.submit()">
     <fieldset>
 
         <legend>Form Name</legend>
 
-        <div class="form-group" validation="myName">
-            <label class="col-md-4 control-label" for="myName">Name</label>
+        <div class="form-group" validation="xxxx">
+            <label class="col-md-4 control-label" for="myName">Name *</label>
             <div class="col-md-4" >
                 <input id="myName"
-                       name="myName"
+                       name="xxxx"
                        type="text"
-                       placeholder="placeholder"
+                       placeholder="Please give me your name"
                        class="form-control input-md"
                        ng-model="regCtrl.model.name"
                        required
                        ng-maxlength="10"
                        ng-minlength="2">
-                <div messages="myName" show-multiple-messages="true">
-                    <span ng-message="required">You did not enter a field</span>
-                    <span ng-message="minlength">Your field is too short</span>
-                    <span ng-message="maxlength">Your field is too long</span>
+                <div messages="xxxx" >
+                    <div ng-message="required">You did not enter a field</div>
+                    <div ng-message="minlength">Your field is too short</div>
+                    <div ng-message="maxlength">Your field is too long</div>
                 </div>
             </div>
         </div>
 
-
         <div class="form-group" validation="age">
-            <label class="col-md-4 control-label" for="age">Age</label>
+            <label class="col-md-4 control-label" for="age">Age (*)</label>
             <div class="col-md-4" >
                 <input id="age"
                        name="age"
@@ -54,10 +52,13 @@
             <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
 
             <div class="col-md-4">
-                <button id="singlebutton" type="submit" name="singlebutton" class="btn btn-primary">Button</button>
+                <button id="singlebutton" type="submit" name="singlebutton"
+                        class="btn btn-primary">Button</button>
                 <button type="button" class="btn btn-default" ng-click="regCtrl.form.$reset(); regCtrl.reset()">Reset
                 </button>
             </div>
+
+           valid?: {{regCtrl.form.$valid}}
         </div>
 
     </fieldset>

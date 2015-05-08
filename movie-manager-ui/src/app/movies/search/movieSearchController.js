@@ -1,10 +1,12 @@
 (function () {
     angular.module('movie-manager.movies')
-        .controller('MovieSearchController', function (MovieSearchResource) {
+        .controller('MovieSearchController', function (MovieSearchResource, movies, $state, $stateParams) {
             var self = this;
 
-            this.query = undefined;
-            this.movies = undefined;
+            this.query = $stateParams.query;
+
+            this.movies = movies;
+
             this.error = undefined;
 
             this.search = function () {
@@ -14,8 +16,7 @@
             };
 
             function searchMovie() {
-                self.loading = true;
-                // Use the MovieSearchResource in order search for movies with the given query
+                $state.go('movies.search', {query: self.query});
             }
         });
 }());
